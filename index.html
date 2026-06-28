@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfimet Logistics Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Perfimet Logistica Inteligente</h1>
+        <p>Control inteligente de tareas y operaciones logísticas</p>
+    </header>
+
+    <main class="container">
+
+        <!-- DASHBOARD -->
+        <section class="dashboard">
+            <article class="card">
+                <h3>Total Tareas</h3>
+                <p id="totalTasks">0</p>
+            </article>
+
+            <article class="card">
+                <h3>Pendientes</h3>
+                <p id="pendingTasks">0</p>
+            </article>
+
+            <article class="card">
+                <h3>En Bodega</h3>
+                <p id="trucksWarehouse">0</p>
+            </article>
+
+            <article class="card">
+                <h3>En Ruta</h3>
+                <p id="trucksRoute">0</p>
+            </article>
+        </section>
+
+        <!-- GESTIÓN DE TAREAS -->
+        <section class="module">
+            <h2>Gestión de Tareas</h2>
+
+            <form id="taskForm">
+                <div class="input-group">
+                    <label for="taskTitle">Título</label>
+                    <input type="text" id="taskTitle" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="taskEmail">Responsable</label>
+                    <input type="email" id="taskEmail" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="taskPriority">Prioridad</label>
+                    <select id="taskPriority" required>
+                        <option value="">Seleccione</option>
+                        <option value="Alta">Alta</option>
+                        <option value="Media">Media</option>
+                        <option value="Baja">Baja</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="taskDate">Fecha límite</label>
+                    <input type="date" id="taskDate" required>
+                </div>
+
+                <button type="submit">Agregar Tarea</button>
+            </form>
+
+            <section id="taskList"></section>
+        </section>
+
+        <!-- CONTROL LOGÍSTICO -->
+        <section class="module">
+            <h2>Centro de Monitoreo Logístico</h2>
+
+            <form id="truckForm">
+                <div class="input-group">
+                    <label for="patente">Patente</label>
+                    <input type="text" id="patente" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="chofer">Chofer</label>
+                    <input type="text" id="chofer" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="empresa">Empresa</label>
+                    <select id="empresa" required>
+                        <option value="">Seleccione empresa</option>
+                        <option value="Kemchi">Kemchi</option>
+                        <option value="Unanue">Unanue</option>
+                        <option value="Externo">Externo</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="carga">Carga</label>
+                    <input type="text" id="carga" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="horaIngreso">Hora de ingreso</label>
+                    <input type="time" id="horaIngreso" required>
+                </div>
+
+                <button type="submit">Registrar Camión</button>
+            </form>
+
+            <!-- COLUMNAS KANBAN -->
+            <section class="truck-columns">
+
+                <article class="truck-column">
+                    <h3>Ingreso</h3>
+                    <div id="ingresoContainer"></div>
+                </article>
+
+                <article class="truck-column">
+                    <h3>En Bodega</h3>
+                    <div id="bodegaContainer"></div>
+                </article>
+
+                <article class="truck-column">
+                    <h3>En Ruta</h3>
+                    <div id="rutaContainer"></div>
+                </article>
+
+                <article class="truck-column">
+                    <h3>Entregado</h3>
+                    <div id="entregadoContainer"></div>
+                </article>
+
+            </section>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Desarrollado por Jesús Hidalgo | INACAP - Analista Programador</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
